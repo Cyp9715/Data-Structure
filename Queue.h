@@ -23,21 +23,21 @@ typedef struct Queue
 Queue* CreateQueue();
 
 // A utility function to create a new linked list node.
-Node* NewNode(void*);
+Node* NewNode(void* data);
   
 // The function to add a key k to q
-void EnQueue(Queue*, void*);
+void EnQueue(Queue* queue, void* data);
   
 // Function to remove a key from given queue q
-void DeQueue(Queue*);
+void DeQueue(Queue* queue);
 
 
 // MutexQueue
 pthread_mutex_t lock_EnQueue;
 pthread_mutex_t lock_DeQueue;
 
-void EnQueue_Lock(Queue*, void*);
+void EnQueue_Lock(Queue* queue, void* data);
 
-void DeQueue_Lock(Queue*);
+void DeQueue_Lock(Queue* queue);
 
 #endif
